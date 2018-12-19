@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "activityLogAlertName": {
+            "defaultValue": "testingForHealthAlert20181219",
+            "type": "String",
+            "metadata": {
+                "description": "testingForHealthAlert20181219"
+            }
+        },
+        "actionGroupName": {
+            "type": "string",
+            "defaultValue": "katefan_testActionGroup",
+            "minLength": 1,
+            "metadata": {
+            "description": "katefan_testActionGroup"
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Insights/activityLogAlerts",
+            "name": "[parameters('activityLogAlertName')]",
+            "apiVersion": "2017-04-01",
+            "location": "Global",
+            "properties": {
+                "enabled": true,
+                "scopes": [
+                    "/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourcegroups/Solace_POC/providers/microsoft.compute/virtualmachines"
+                ],
+                "condition": {
+                    "allOf": [
+                        {
+                            "field": "category",
+                            "equals": "ResourceHealth"
+                        },
+                        {
+                            "field": "status",
+                            "equals": "Active"
+                        }
+                    ]
+                },
+                "actions": {
+                    "actionGroups": [
+                        {
+                            "actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroupName'))]"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

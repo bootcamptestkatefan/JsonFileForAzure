@@ -1,0 +1,147 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "actionGroupName": {
+      "type": "string",
+      "defaultValue": "katefan_testActionGroup",
+      "minLength": 1,
+      "metadata": {
+        "description": "katefan_testActionGroup"
+      }
+    },
+    "actionGroupShortName": {
+      "type": "string",
+      "defaultValue": "kfTestActGp",
+      "minLength": 1,
+      "maxLength": 12,
+      "metadata": {
+        "description": "kfTestActGp"
+      }
+    },
+    "Subscription": {
+      "type": "string",
+      "defaultValue": "PCF development",
+      "metadata": {
+        "description": "PCF development"
+      }
+    },
+    "emailAddress": {
+      "type": "string",
+      "metadata": {
+        "description": "kate.fan@oocl.com"
+      }
+    },
+    "activityLogAlertName": {
+      "type": "string",
+      "defaultValue": "Alert for VM down (Testing20181217)",
+      "minLength": 1,
+      "metadata": {
+        "description": "HealthAlert_testing"
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Insights/actionGroups",
+      "apiVersion": "2017-04-01",
+      "name": "[parameters('actionGroupName')]",
+      "location": "Global",
+      "properties": {
+        "groupShortName": "[parameters('actionGroupShortName')]",
+        "enabled": "true",
+        "emailReceivers": [
+          {
+            "name": "emailReceiver",
+            "emailAddress": "[parameters('emailAddress')]"
+          }
+        ],
+        "webhookReceivers": [
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Insights/activityLogAlerts",
+      "apiVersion": "2017-04-01",
+      "name": "[parameters('activityLogAlertName')]",
+      "location": "Global",
+      "dependsOn": [
+        "[parameters('actionGroupName')]"
+      ],
+      "properties": {
+        "enabled": "true",
+        "scopes": [
+          "[Subscription().id]"
+        ],
+        "condition": {
+          "allOf": [
+            {
+              "field": "Category",
+              "equals": "ResourceHealth"
+            },
+            {
+              "field": "status",
+              "equals": "Active"
+            },
+            {
+              "field": "resourceType",
+              "equals": "Microsoft.Compute/virtualMachines",
+              "containsAny": null
+            },
+            {
+              "anyOf": [
+                {
+                  "field": "properties.currentHealthStatus",
+                  "equals": "Available",
+                  "containsAny": null
+                },
+                {
+                  "field": "properties.currentHealthStatus",
+                  "equals": "Unavailable",
+                  "containsAny": null
+                },
+                {
+                  "field": "properties.currentHealthStatus",
+                  "equals": "Degraded",
+                  "containsAny": null
+                }
+              ]
+            },
+            {
+              "anyOf": [
+                {
+                  "field": "properties.previousHealthStatus",
+                  "equals": "Available",
+                  "containsAny": null
+                },
+                {
+                  "field": "properties.previousHealthStatus",
+                  "equals": "Unavailable",
+                  "containsAny": null
+                },
+                {
+                  "field": "properties.previousHealthStatus",
+                  "equals": "Degraded",
+                  "containsAny": null
+                }
+              ]
+            },
+            {
+              "field": "properties.cause",
+              "equals": "PlatformInitiated",
+              "containsAny": null
+            }
+          ]
+        },
+        "actions": {
+          "actionGroups": [
+            {
+              "actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroupName'))]"
+            }
+          ]
+        }
+      }
+    }
+  ]
+
+}
