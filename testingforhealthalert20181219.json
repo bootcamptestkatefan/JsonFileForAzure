@@ -38,6 +38,22 @@
                         {
                             "field": "status",
                             "equals": "Active"
+                        },
+                        {
+                            "anyOf": [
+                                {
+                                    "field": "resourceType",
+                                    "equals": "Microsoft.Compute/virtualMachines",
+                                    "containsAny": null
+                                }
+                            ],
+                            "anyOf": [
+                                {
+                                    "field": "status",
+                                    "equals": "Active"
+                                }
+
+                            ]
                         }
                     ]
                 },
