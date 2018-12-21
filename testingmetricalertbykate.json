@@ -34,7 +34,7 @@
       "defaultValue": "cpu_percent",
       "metadata": {
         "description": "Percentage CPU(Platform)"
-      }
+      } 
     },
     "operator": {
       "type": "string",
