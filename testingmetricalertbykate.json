@@ -34,7 +34,7 @@
       "defaultValue": "cpu_percent",
       "metadata": {
         "description": "Percentage CPU(Platform)"
-      } 
+      }
     },
     "operator": {
       "type": "string",
@@ -108,7 +108,7 @@
       "properties": {
         "name": "[parameters('alertName')]",
         "scopes": [
-          "/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourcegroups/Solace_POC/providers/microsoft.compute/virtualmachines/SolaceDocker02"
+          "/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourcegroups/Solace_POC/providers/microsoft.compute/virtualmachines/SolaceDocker03"
         ],
         "description": "[parameters('alertDescription')]",
         "isEnabled": "[parameters('isEnabled')]",
