@@ -50,6 +50,8 @@
       "properties": {
         "groupShortName": "[parameters('actionGroupShortName')]",
         "enabled": "true",
+        "smsReceivers": [
+        ],
         "emailReceivers": [
           {
             "name": "emailReceiver",

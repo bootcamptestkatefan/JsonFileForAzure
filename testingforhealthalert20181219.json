@@ -9,6 +9,13 @@
                 "description": "testingForHealthAlert20181219"
             }
         },
+        "windowSize": {
+            "type": "string",
+            "defaultValue": "PT5M",
+            "metadata": {
+                "description": "Period of time used to monitor alert activity based on the threshold. Must be between five minutes and one day. ISO 8601 duration format."
+            }
+        },
         "actionGroupName": {
             "type": "string",
             "defaultValue": "katefan_testActionGroup",
@@ -25,6 +32,7 @@
             "apiVersion": "2017-04-01",
             "location": "Global",
             "properties": {
+                "windowSize": "[parameters('windowSize')]",
                 "enabled": true,
                 "scopes": [
                     "/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourcegroups/Solace_POC/providers/microsoft.compute/virtualmachines"
@@ -36,23 +44,20 @@
                             "equals": "ResourceHealth"
                         },
                         {
-                            "field": "status",
-                            "equals": "Active"
+                                    "field": "resourceType",
+                                    "equals": "Microsoft.Compute/virtualMachines",
+                                    "containsAny": null
                         },
                         {
                             "anyOf": [
                                 {
-                                    "field": "resourceType",
-                                    "equals": "Microsoft.Compute/virtualMachines",
-                                    "containsAny": null
-                                }
-                            ],
-                            "anyOf": [
-                                {
                                     "field": "status",
                                     "equals": "Active"
+                                },
+                                {
+                                    "field": "status",
+                                    "equals": "Resolved"
                                 }
-
                             ]
                         }
                     ] 
