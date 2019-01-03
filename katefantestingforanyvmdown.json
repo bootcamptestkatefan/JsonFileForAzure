@@ -49,11 +49,6 @@
               "anyOf": [
                 {
                   "field": "properties.currentHealthStatus",
-                  "equals": "Available",
-                  "containsAny": null
-                },
-                {
-                  "field": "properties.currentHealthStatus",
                   "equals": "Unavailable",
                   "containsAny": null
                 },
@@ -63,6 +58,11 @@
                   "containsAny": null
                 }
               ]
+            },
+            {
+              "field": "properties.previousHealthStatus",
+              "equals": "Available",
+              "containsAny": null
             }
           ]
         },
