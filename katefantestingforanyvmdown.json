@@ -82,10 +82,6 @@
               "equals": "ResourceHealth"
             },
             {
-              "field": "status",
-              "equals": "Active"
-            },
-            {
               "field": "resourceType",
               "equals": "Microsoft.Compute/virtualMachines",
               "containsAny": null
@@ -107,32 +103,13 @@
                   "equals": "Degraded",
                   "containsAny": null
                 }
-              ]
-            },
-            {
-              "anyOf": [
                 {
-                  "field": "properties.previousHealthStatus",
-                  "equals": "Available",
-                  "containsAny": null
-                },
-                {
-                  "field": "properties.previousHealthStatus",
-                  "equals": "Unavailable",
-                  "containsAny": null
-                },
-                {
-                  "field": "properties.previousHealthStatus",
-                  "equals": "Degraded",
+                  "field": "properties.currentHealthStatus",
+                  "equals": "Unknown",
                   "containsAny": null
                 }
               ]
             },
-            {
-              "field": "properties.cause",
-              "equals": "PlatformInitiated",
-              "containsAny": null
-            }
           ]
         },
         "actions": {
