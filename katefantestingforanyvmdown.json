@@ -20,7 +20,8 @@
     }
   },
   "variables": {
-    "windowSize": "PT1M"
+    "windowSize": "PT1M",
+		"severity":"3"
   },
   "resources": [
     {
@@ -34,6 +35,7 @@
           "/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourcegroups/Solace_POC/providers/microsoft.compute/virtualmachines"
         ],
         "condition": {
+          "severity":"[variables('severity')]",
           "windowSize": "[variables('windowSize')]",
           "allOf": [
             {
@@ -60,9 +62,18 @@
               ]
             },
             {
-              "field": "properties.previousHealthStatus",
-              "equals": "Available",
-              "containsAny": null
+              "anyOf": [
+                {
+                  "field": "properties.previousHealthStatus",
+                  "equals": "Available",
+                  "containsAny": null
+                },
+                {
+                  "field": "properties.previousHealthStatus",
+                  "equals": "null",
+                  "containsAny": null
+                }
+              ]
             }
           ]
         },

@@ -1,0 +1,51 @@
+{
+    "channels": "Admin, Operation",
+    "correlationId": "6aff2723-fb61-4576-8773-bbb437b9d694",
+    "description": "",
+    "eventDataId": "63b81108-47d2-4275-87da-bddf5263d8e8",
+    "eventName": {
+        "value": "",
+        "localizedValue": ""
+    },
+    "category": {
+        "value": "ResourceHealth",
+        "localizedValue": "Resource Health"
+    },
+    "eventTimestamp": "2019-01-04T03:09:08.747Z",
+    "id": "/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourceGroups/Solace_POC/providers/Microsoft.Compute/virtualMachines/test-alert/events/63b81108-47d2-4275-87da-bddf5263d8e8/ticks/636821681487470000",
+    "level": "Informational",
+    "operationId": "",
+    "operationName": {
+        "value": "Microsoft.Resourcehealth/healthevent/Activated/action",
+        "localizedValue": "Health Event Activated"
+    },
+    "resourceGroupName": "Solace_POC",
+    "resourceProviderName": {
+        "value": "Microsoft.Resourcehealth/healthevent/action",
+        "localizedValue": "Microsoft.Resourcehealth/healthevent/action"
+    },
+    "resourceType": {
+        "value": "Microsoft.Compute/virtualMachines",
+        "localizedValue": "Microsoft.Compute/virtualMachines"
+    },
+    "resourceId": "/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourceGroups/Solace_POC/providers/Microsoft.Compute/virtualMachines/test-alert",
+    "status": {
+        "value": "Active",
+        "localizedValue": "Active"
+    },
+    "subStatus": {
+        "value": "",
+        "localizedValue": ""
+    },
+    "submissionTimestamp": "2019-01-04T03:23:52.7931096Z",
+    "subscriptionId": "1572d25b-4161-4e7b-937e-76154835cb13",
+    "properties": {
+        "title": null,
+        "details": null,
+        "currentHealthStatus": "Unavailable",
+        "previousHealthStatus": "Available",
+        "type": "Downtime",
+        "cause": "UserInitiated"
+    },
+    "relatedEvents": []
+}

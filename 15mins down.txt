@@ -1,0 +1,53 @@
+15mins down
+
+{
+    "channels": "Admin, Operation",
+    "correlationId": "53ecadf9-133a-4084-8264-3f633922c2f2",
+    "description": "",
+    "eventDataId": "aa1e0e27-ce88-4ca4-bbcf-d2764c33749a",
+    "eventName": {
+        "value": "",
+        "localizedValue": ""
+    },
+    "category": {
+        "value": "ResourceHealth",
+        "localizedValue": "Resource Health"
+    },
+    "eventTimestamp": "2019-01-03T08:56:18.1558688Z",
+    "id": "/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourceGroups/Solace_POC/providers/Microsoft.Compute/virtualMachines/test-alert/events/aa1e0e27-ce88-4ca4-bbcf-d2764c33749a/ticks/636821025781558688",
+    "level": "Critical",
+    "operationId": "",
+    "operationName": {
+        "value": "Microsoft.Resourcehealth/healthevent/Updated/action",
+        "localizedValue": "Health Event Updated"
+    },
+    "resourceGroupName": "Solace_POC",
+    "resourceProviderName": {
+        "value": "Microsoft.Resourcehealth/healthevent/action",
+        "localizedValue": "Microsoft.Resourcehealth/healthevent/action"
+    },
+    "resourceType": {
+        "value": "Microsoft.Compute/virtualMachines",
+        "localizedValue": "Microsoft.Compute/virtualMachines"
+    },
+    "resourceId": "/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourceGroups/Solace_POC/providers/Microsoft.Compute/virtualMachines/test-alert",
+    "status": {
+        "value": "Updated",
+        "localizedValue": "Updated"
+    },
+    "subStatus": {
+        "value": "",
+        "localizedValue": ""
+    },
+    "submissionTimestamp": "2019-01-03T08:56:24.1960673Z",
+    "subscriptionId": "1572d25b-4161-4e7b-937e-76154835cb13",
+    "properties": {
+        "title": "Down: Virtual machine has been unavailable for 15 minutes",
+        "details": "",
+        "currentHealthStatus": "Unavailable",
+        "previousHealthStatus": null,
+        "type": "Downtime",
+        "cause": "PlatformInitiated"
+    },
+    "relatedEvents": []
+}
