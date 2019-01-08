@@ -1,0 +1,74 @@
+POST / HTTP/1.1
+Host: 4c.requestcatcher.com
+Connection: Keep-Alive
+Content-Length: 4666
+Content-Type: application/json; charset=utf-8
+Expect: 100-continue
+User-Agent: IcMBroadcaster/1.0
+X-Correlationcontext: RkkKACgAAAACAAAAEABzwUkhizmeQI5yFbEWJ9s2AQAQAL9CUatWSApBuBr3TUWZnbU=
+
+
+
+{
+	"schemaId":"Microsoft.Insights/activityLogs",
+	"data":{
+		"status":"Activated",
+		"context":{
+			"activityLog":{
+				"authorization":{
+					"action":"Microsoft.Compute/virtualMachines/deallocate/action",
+					"scope":"/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourceGroups/Solace_POC/providers/Microsoft.Compute/virtualMachines/test-alert"
+				},
+				"channels":"Operation",
+				"claims":"{
+					\"aud\":\"https://management.core.windows.net/\",
+					\"iss\":\"https://sts.windows.net/7851b4cc-2c5c-459f-96d9-16731d6b4ca4/\",
+					\"iat\":\"1546837091\",
+					\"nbf\":\"1546837091\",
+					\"exp\":\"1546840991\",
+					\"http://schemas.microsoft.com/claims/authnclassreference\":\"1\",
+					\"aio\":\"ASQA2/8JAAAAt/WM2zMlkFz6vu3hPrrwgxQ8rbmIyU3098G25jhuV+E=\",
+					\"http://schemas.microsoft.com/claims/authnmethodsreferences\":\"pwd\",
+					\"appid\":\"c44b4083-3bb0-49c1-b47d-974e53cbdf3c\",
+					\"appidacr\":\"2\",
+					\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname\":\"FAN\",
+					\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname\":\"KATE\",
+					\"groups\":\"2863a72b-f87c-43b3-8918-f561332efefe,9ae7e837-a488-4a0c-9e03-1777683bf601,a3fce457-51e3-444f-9a45-d8e93e4afcef,db507cd1-2e2c-43f8-be6f-5c90431b7583,9ce23834-1c6d-4f67-9e2d-e78188384eaf,68ef1808-8adf-4eda-acd3-14979d0e9951,c4a079ed-ebf7-487a-868d-3bb322d2bf78,8d91ff73-0b28-4915-8faf-dd94520abb61,4c7b811c-a86c-41a1-9042-2deab104b117,5944aaf7-f7a7-47ec-8f63-bd65ab78f72e,32f49480-033e-42ad-aa4f-af5779558f50,4eb6a8e3-478d-416e-9797-282821620635,69f9ea46-235d-49b7-b225-dc3eeb4a240e,79c68f2d-8cfd-40ee-96a5-f8687ffc8209,d9dbb832-c9c3-47fa-8ada-dbc5788c9221,fe1826cf-b9a3-4214-9580-4dc956bee5d1,6f4fde58-bd51-42dd-87ca-9f9cb4f08fd2,891fa602-6acb-4cec-9c39-8d96721b0a2a,499358b8-48f5-4195-9081-a26d04c86b92,00197245-7aca-45b7-912a-8572e28bd27f,5738c65c-dae6-4924-bcf3-eef4abf48fd2,81462df1-8674-4764-acea-d8d4aa510607,cd7b4664-df66-4248-b76a-b4571b819950,24529da2-d591-4a30-89b6-c79656a71ed1,d5c5a19c-09ef-4a6e-a2c7-4cefa951930d,c7036253-11f2-41fa-9d24-93e37fb7a495,bcc606af-5df6-4a4b-b2d5-54b7f9c9bb2e,3cd8f44e-aaab-485d-b14d-8a890b780975,b7418b0e-416d-4815-a78f-ca57deb9c61f,46f2a444-bcd6-4402-a7fa-6837ed104ea0,7e950c15-91e9-4b79-8bce-f5c3ec3a19ad,0c5e0f3e-356f-4f38-b027-6ba12ec961e8,87710d90-e030-4c30-9290-5405a6bf7b6b,42c86a2f-8628-475c-957a-b6046fb02a14,679f73a4-4edc-4863-8a6b-66e39d3b393e,a2736b64-b729-4209-974a-fa2ab6d493c4,0cc439ec-5058-4476-b3ce-26d9f11f4c27,3583c97c-d75e-458f-919a-9e989df3d3db,da64dc5e-6a39-4df5-8bc5-a83da5fcf95a,fb3c3148-4147-4e09-bfbe-7de14248bb6d,466513f9-998d-42d9-a2c5-d3b56d9b9d28,460b60c3-4ff7-40e1-97fe-c80c699b1b39,d92cd1a6-0788-46ac-90e0-429c361a5c66,44debcbf-f4ad-4771-96d5-c407b2a67c73,4db23856-a4d3-4290-ac67-c013407629e1,f45f77be-e4ff-47de-a023-e20110e82d14,f9389f68-34fa-4a43-9232-8a1d2215f95b,1ced0adc-3001-405b-a661-f3dbc5fac59d,b1673261-0e86-4cd9-8ba6-e8e1c154fa84,0e37cc8a-81cb-4aac-b9f9-ce389760a8e4,d1a6901c-f520-41de-bc9c-146e2e4ed0ec,bda5e7d7-a258-4af8-acc6-a544907d9864,b8c979b4-1d64-4fb1-a8e9-c956b918cfd1,a181a72d-256b-40b8-81d6-c5e296c0a5e7,61c45d80-7718-4b61-b11a-1a6ef4899591\",
+					\"in_corp\":\"true\",
+					\"ipaddr\":\"165.84.186.196\",
+					\"name\":\"KATE FAN (INFRA-ISD-OOCLL/HKG)\",
+					\"http://schemas.microsoft.com/identity/claims/objectidentifier\":\"89f27200-b233-4c09-a19f-2a70c74279c9\",
+					\"onprem_sid\":\"S-1-5-21-2065039802-622210664-899889007-200604\",
+					\"puid\":\"10033FFFA319DCC6\",
+					\"http://schemas.microsoft.com/identity/claims/scope\":\"user_impersonation\",
+					\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier\":\"eh1WhKjJq_yin0cIRdEfbcKWm7Zg_xY24u5ASxr8xwY\",
+					\"http://schemas.microsoft.com/identity/claims/tenantid\":\"7851b4cc-2c5c-459f-96d9-16731d6b4ca4\",
+					\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name\":\"FANKA@OOCL.COM\",
+					\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn\":\"FANKA@OOCL.COM\",
+					\"uti\":\"aF1VI-NSjUGoDUNnMTsKAA\",
+					\"ver\":\"1.0\"
+				}",
+				"caller":"FANKA@OOCL.COM",
+				"correlationId":"578e00cb-7ec8-4df1-afae-a8757e0bde2e",
+				"description":"",
+				"eventSource":"Administrative",
+				"eventTimestamp":"2019-01-07T05:26:32.1489245+00:00",
+				"eventDataId":"b433e351-c992-43a2-9d5f-6e2c271256a5",
+				"level":"Informational",
+				"operationName":"Microsoft.Compute/virtualMachines/deallocate/action",
+				"operationId":"6e763155-f790-420e-a5ac-aa6b5107d337",
+				"resourceId":"/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourceGroups/Solace_POC/providers/Microsoft.Compute/virtualMachines/test-alert",
+				"resourceGroupName":"Solace_POC",
+				"resourceProviderName":"Microsoft.Compute",
+				"status":"Succeeded",
+				"subStatus":"",
+				"subscriptionId":"1572d25b-4161-4e7b-937e-76154835cb13",
+				"submissionTimestamp":"2019-01-07T05:26:58.0803698+00:00",
+				"resourceType":"Microsoft.Compute/virtualMachines"
+			}
+		},
+		"properties":{
+
+		}
+	}
+}

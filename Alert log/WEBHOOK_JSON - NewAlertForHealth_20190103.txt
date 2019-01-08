@@ -1,0 +1,45 @@
+POST / HTTP/1.1
+Host: networktesting.requestcatcher.com
+Connection: Keep-Alive
+Content-Length: 1060
+Content-Type: application/json; charset=utf-8
+Expect: 100-continue
+User-Agent: IcMBroadcaster/1.0
+X-Correlationcontext: RkkKACgAAAACAAAAEACJcoy48wD5QIet0xnqKh8OAQAQANWgctfMlytNv4YOR3kRjWI=
+
+
+
+{
+	"schemaId":"Microsoft.Insights/activityLogs",
+	"data":{
+		"status":"Activated",
+		"context":{
+			"activityLog":{
+				"channels":"Admin,
+				 Operation",
+				 "correlationId":"a3cfed27-2b0c-4637-b4d2-c93f5c1eab0e",
+				"eventSource":"ResourceHealth",
+				"eventTimestamp":"2019-01-07T05:25:30.584+00:00",
+				"eventDataId":"433e1710-2008-468e-b7a6-03e2e7b48b1b",
+				"level":"Informational",
+				"operationName":"Microsoft.Resourcehealth/healthevent/Activated/action",
+				"operationId":"433e1710-2008-468e-b7a6-03e2e7b48b1b",
+				"properties":{
+					"title":null,
+					"details":null,
+					"currentHealthStatus":"Unavailable",
+					"previousHealthStatus":"Available",
+					"type":"Downtime",
+					"cause":"UserInitiated"
+				},
+				"resourceId":"/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourceGroups/Solace_POC/providers/Microsoft.Compute/virtualMachines/test-alert",
+				"resourceGroupName":"Solace_POC",
+				"resourceProviderName":"Microsoft.Resourcehealth/healthevent/action",
+				"status":"Active",
+				"subscriptionId":"1572d25b-4161-4e7b-937e-76154835cb13",
+				"submissionTimestamp":"2019-01-07T05:58:33.5418328+00:00",
+				"resourceType":"Microsoft.Compute/virtualMachines"
+			}
+		}
+	}
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "actionGroupName": {
+      "type": "string",
+      "defaultValue": "katefan_emailandWebhook",
+      "minLength": 1,
+      "metadata": {
+        "description": "katefan_emailandWebhook"
+      }
+    },
+    "activityLogAlertName": {
+      "type": "string",
+      "defaultValue": "NewAlertforVMdown_RESOLVED_20190107",
+      "minLength": 1,
+      "metadata": {
+        "description": "NewAlertforVMdown_RESOLVED_20190107"
+      }
+    }
+  },
+  "variables": {
+    "windowSize": "PT1M",
+  "level":"critical"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Insights/activityLogAlerts",
+      "apiVersion": "2017-04-01",
+      "name": "[parameters('activityLogAlertName')]",
+      "location": "Global",
+      "properties": {
+        "enabled": "true",
+        "scopes": [
+          "/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourcegroups/Solace_POC/providers/microsoft.compute/virtualmachines"
+        ],
+        "condition": {
+          "level":"[variables('level')]",
+          "windowSize": "[variables('windowSize')]",
+          "allOf": [
+            {
+              "field": "Category",
+              "equals": "ResourceHealth"
+            },
+            {
+              "field": "resourceType",
+              "equals": "Microsoft.Compute/virtualMachines",
+              "containsAny": null
+            },
+            {
+              "anyOf": [
+                {
+                  "field": "properties.previousHealthStatus",
+                  "equals": "Unavailable",
+                  "containsAny": null
+                },
+                {
+                  "field": "properties.previousHealthStatus",
+                  "equals": "Degraded",
+                  "containsAny": null
+                }
+              ]
+            },
+            {
+              "field": "properties.currentHealthStatus",
+              "equals": "Available",
+              "containsAny": null
+            }
+          ]
+        },
+        "actions": {
+          "actionGroups": [
+            {
+              "actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroupName'))]"
+            }
+          ]
+        }
+      }
+    }
+  ]
+
+}

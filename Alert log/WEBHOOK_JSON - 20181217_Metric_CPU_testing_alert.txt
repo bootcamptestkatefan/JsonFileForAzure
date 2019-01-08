@@ -1,0 +1,48 @@
+POST / HTTP/1.1
+Host: control.requestcatcher.com
+Connection: Keep-Alive
+Content-Length: 1313
+Content-Type: application/json; charset=utf-8
+Expect: 100-continue
+User-Agent: IcMBroadcaster/1.0
+X-Correlationcontext: RkkKACgAAAACAAAAEAD/qDNdZtwWTobPDq+9JQAYAQAQAKq4MoLgB9xFoDiD7UUgOS8=
+
+
+
+{
+	"schemaId":"AzureMonitorMetricAlert",
+	"data":{
+		"version":"2.0",
+		"properties":null,
+		"status":"Activated",
+		"context":{
+			"timestamp":"2019-01-07T05:07:51.6920272Z",
+			"id":"/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourceGroups/Solace_POC/providers/microsoft.insights/metricAlerts/20181217_Metric_CPU_testing_alert",
+			"name":"20181217_Metric_CPU_testing_alert",
+			"description":"[katefan] created new action group for testing ",
+			"conditionType":"SingleResourceMultipleMetricCriteria",
+			"severity":"3",
+			"condition":{
+				"windowSize":"PT1M",
+				"allOf":[{
+					"metricName":"Percentage CPU",
+					"metricNamespace":"Microsoft.Compute/virtualMachines",
+					"operator":"GreaterThan",
+					"threshold":"36.42",
+					"timeAggregation":"Average",
+					"dimensions":[{
+						"name":"ResourceId",
+						"value":"4304315d-6263-4e15-b7f8-f5451106f2d0"
+					}],
+					"metricValue":51.275
+				}]
+			},
+			"subscriptionId":"1572d25b-4161-4e7b-937e-76154835cb13",
+			"resourceGroupName":"Solace_POC",
+			"resourceName":"SolaceDocker02",
+			"resourceType":"Microsoft.Compute/virtualMachines",
+			"resourceId":"/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourceGroups/Solace_POC/providers/Microsoft.Compute/virtualMachines/SolaceDocker02",
+			"portalLink":"https://portal.azure.com/#resource/subscriptions/1572d25b-4161-4e7b-937e-76154835cb13/resourceGroups/Solace_POC/providers/Microsoft.Compute/virtualMachines/SolaceDocker02"
+		}
+	}
+}
